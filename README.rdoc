@@ -20,6 +20,11 @@ This simple plugin gives you the ability to call to_xls to a collection of activ
 
 == Real life example
 	
+In config/initializers/mime_types.rb register the custom mime type.
+
+  Mime::Type.register "application/vnd.ms-excel", :xls	
+	
+	
 In the controller where you want to export to excel, add the format.xls line.
 
 	class UserController < ApplicationController
