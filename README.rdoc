@@ -1,6 +1,6 @@
 = to_xls plugin
 
-This simple plugin gives you the ability to call to_xls to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include.
+This Rails plugin is the easiest way to export to Excel. It gives you the ability to call to_xls to a collection of activerecords (Array). The builder options are the same as to_json / to_xml, except for the :include.
 
 
 == Usage
