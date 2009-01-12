@@ -2,6 +2,8 @@
 
 This Rails plugin is the easiest way to export to Excel. It gives you the ability to call to_xls to a collection of activerecords (Array). The builder options are the same as to_json / to_xml, except for the :include.
 
+NOTE: IMO I would use the to_csv plugin; it's more compatible. (http://github.com/arydjmal/to_csv)
+
 
 == Usage
 
