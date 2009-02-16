@@ -8,9 +8,8 @@ class Array
       attributes = self.first.attributes.keys.map { |c| c.to_sym }
       
       if options[:only]
-        columns = options[:only].to_a
-        # get rid of invalid columns
-        columns = columns & attributes
+        # the "& attributes" get rid of invalid columns
+        columns = options[:only].to_a & attributes
       else
         columns = attributes - options[:except].to_a
       end
