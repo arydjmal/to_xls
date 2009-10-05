@@ -4,6 +4,9 @@ This Rails plugin is the easiest way to export to Excel. It gives you the abilit
 
 NOTE: IMO I would use the to_csv plugin; it's more compatible. (http://github.com/arydjmal/to_csv)
 
+== Compatibility
+
+Works only for MS Excel 2003+
 
 == Usage
 
