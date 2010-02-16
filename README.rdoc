@@ -17,54 +17,53 @@ NOTE: IMO I would use the to_csv plugin; it's more compatible. (http://github.co
   @users.to_xls(:only => [:last_name, :role])
   @users.to_xls(:headers => false)
   @users.to_xls(:except => [:last_name, :role])
-  @users.to_xls(:except => :role, :methods => :admin?)
+  @users.to_xls(:methods => :admin?)
 
 
 == Real life example
-	
+
 In config/initializers/mime_types.rb register the custom mime type.
 
-  Mime::Type.register "application/vnd.ms-excel", :xls	
-	
-	
+  Mime::Type.register "application/vnd.ms-excel", :xls  
+
+
 In the controller where you want to export to excel, add the format.xls line.
 
-	class UserController < ApplicationController
+  class UserController < ApplicationController
 
-		def index
-			@users = User.all
+    def index
+      @users = User.all
 
-			respond_to do |format|
-				format.html
-				format.xml { render :xml => @users }
-				format.xls { send_data @users.to_xls }
-			end
-		end
+      respond_to do |format|
+        format.html
+        format.xml { render :xml => @users }
+        format.xls { send_data @users.to_xls }
+      end
+    end
 
-		def show...
-		def new...
-		def edit...
-		def create...
-		def update...
-		def destroy...
+    def show...
+    def new...
+    def edit...
+    def create...
+    def update...
+    def destroy...
 
-	end
+  end
 
 
 == Dependencies
 
-	None.
+  None.
 
 
 == Install
 
-	./script/plugin install git://github.com/arydjmal/to_xls.git
+  ./script/plugin install git://github.com/arydjmal/to_xls.git
 
 
 == Note
 
 Does not work on a single activerecord, ie, User.first.to_xls.
-
 
 
 Copyright (c) 2009 Ary Djmal, released under the MIT license
