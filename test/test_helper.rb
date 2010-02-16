@@ -4,7 +4,7 @@ begin
   require 'active_support'
   require File.dirname(__FILE__) + '/../lib/to_xls'
 rescue LoadError
-  puts 'to_csv tests rely on active_support'
+  puts 'to_xls tests rely on active_support'
 end
 
 class User
