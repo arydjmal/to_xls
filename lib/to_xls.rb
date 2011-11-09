@@ -24,7 +24,7 @@ class Array
         self.each do |item|
           output << "<Row>"
           columns.each do |column|
-            value = item.send(column)
+            value = column.to_s.split(".").inject(item){|memo, message| memo.send(message)}
             output << "<Cell><Data ss:Type=\"#{value.is_a?(Integer) ? 'Number' : 'String'}\">#{value}</Data></Cell>"
           end
           output << "</Row>"
