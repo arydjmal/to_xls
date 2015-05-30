@@ -25,7 +25,7 @@ class Array
           output << "<Row>"
           columns.each do |column|
             value = item.send(column)
-            output << "<Cell><Data ss:Type=\"#{value.is_a?(Integer) ? 'Number' : 'String'}\">#{value}</Data></Cell>"
+            output << "<Cell><Data ss:Type=\"#{value.is_a?(Numeric) ? 'Number' : 'String'}\">#{value}</Data></Cell>"
           end
           output << "</Row>"
         end
